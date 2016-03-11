@@ -154,6 +154,8 @@ import QuartzCore
         }
     }
     
+    @IBInspectable public var thumbOffImage: UIImage!
+    
     /*
     *   Sets the image that shows when the switch is on.
     *   The image is centered in the area not covered by the knob.
@@ -241,12 +243,12 @@ import QuartzCore
         // on/off images
         self.onImageView = UIImageView(frame: CGRectMake(0, 0, self.frame.size.width - self.frame.size.height, self.frame.size.height))
         onImageView.alpha = 1.0
-        onImageView.contentMode = UIViewContentMode.Center
+        onImageView.contentMode = UIViewContentMode.ScaleAspectFill
         backgroundView.addSubview(onImageView)
         
         self.offImageView = UIImageView(frame: CGRectMake(self.frame.size.height, 0, self.frame.size.width - self.frame.size.height, self.frame.size.height))
         offImageView.alpha = 1.0
-        offImageView.contentMode = UIViewContentMode.Center
+        offImageView.contentMode = UIViewContentMode.ScaleAspectFill
         backgroundView.addSubview(offImageView)
         
         // labels
@@ -277,7 +279,7 @@ import QuartzCore
         
         // thumb image
         self.thumbImageView = UIImageView(frame: CGRectMake(0, 0, thumbView.frame.size.width, thumbView.frame.size.height))
-        thumbImageView.contentMode = UIViewContentMode.Center
+        thumbImageView.contentMode = UIViewContentMode.ScaleAspectFit
         thumbImageView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         thumbView.addSubview(thumbImageView)
     
@@ -290,12 +292,23 @@ import QuartzCore
         startTrackingValue = self.on
         didChangeWhileTracking = false
         
-        let activeKnobWidth = self.bounds.size.height - 2 + 5
+        let activeKnobWidth = self.bounds.size.height// - 2 + 5
         isAnimating = true
+        
+        if var _ = thumbOffImage {
+            thumbImageView.image = self.on ? thumbImage : thumbOffImage
+            
+            let transition = CATransition()
+            transition.duration = 0.3
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionFade
+            
+            thumbImageView.layer.addAnimation(transition, forKey: nil)
+        }
         
         UIView.animateWithDuration(0.3, delay: 0.0, options: [UIViewAnimationOptions.CurveEaseOut, UIViewAnimationOptions.BeginFromCurrentState], animations: {
                 if self.on {
-                    self.thumbView.frame = CGRectMake(self.bounds.size.width - (activeKnobWidth + 1), self.thumbView.frame.origin.y, activeKnobWidth, self.thumbView.frame.size.height)
+                    self.thumbView.frame = CGRectMake(self.bounds.size.width - activeKnobWidth, self.thumbView.frame.origin.y, activeKnobWidth, self.thumbView.frame.size.height)
                     self.backgroundView.backgroundColor = self.onTintColor
                     self.thumbView.backgroundColor = self.onThumbTintColor
                 }
