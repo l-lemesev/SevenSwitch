@@ -22,6 +22,8 @@
 		45F7C646176D202700AE1301 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7C645176D202700AE1301 /* Default@2x.png */; };
 		45F7C648176D202700AE1301 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F7C647176D202700AE1301 /* Default-568h@2x.png */; };
 		45F7C64B176D202700AE1301 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F7C649176D202700AE1301 /* MainStoryboard.storyboard */; };
+		ADA163021C930F3D00D97909 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA163011C930F3D00D97909 /* Media.xcassets */; };
+		ADA163041C93159500D97909 /* SevenSwitch.podspec in Resources */ = {isa = PBXBuildFile; fileRef = ADA163031C93159500D97909 /* SevenSwitch.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		45F7C64A176D202700AE1301 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		45F7C64C176D202700AE1301 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		45F7C64D176D202700AE1301 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ADA163011C930F3D00D97909 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		ADA163031C93159500D97909 /* SevenSwitch.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SevenSwitch.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		45F7C637176D202700AE1301 /* SevenSwitchExample */ = {
 			isa = PBXGroup;
 			children = (
+				ADA163031C93159500D97909 /* SevenSwitch.podspec */,
 				4593DA6119561C05006EB924 /* AppDelegate.swift */,
 				45F7C64C176D202700AE1301 /* ViewController.h */,
 				45F7C64D176D202700AE1301 /* ViewController.m */,
@@ -101,6 +106,7 @@
 				45B6529D176E3A440006F201 /* cross.png */,
 				45B6529E176E3A440006F201 /* cross@2x.png */,
 				45F7C638176D202700AE1301 /* Supporting Files */,
+				ADA163011C930F3D00D97909 /* Media.xcassets */,
 			);
 			path = SevenSwitchExample;
 			sourceTree = "<group>";
@@ -170,6 +176,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA163021C930F3D00D97909 /* Media.xcassets in Resources */,
+				ADA163041C93159500D97909 /* SevenSwitch.podspec in Resources */,
 				45F7C63C176D202700AE1301 /* InfoPlist.strings in Resources */,
 				45F7C644176D202700AE1301 /* Default.png in Resources */,
 				45F7C646176D202700AE1301 /* Default@2x.png in Resources */,
